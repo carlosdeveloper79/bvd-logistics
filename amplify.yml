@@ -21,6 +21,4 @@ frontend:
     files:
       - '**/*'
   cache:
-    paths:
-      - node_modules/**/*
-      - .next/cache/**/*
+    paths: []  # cleared to force clean build — re-add after first successful deploy
