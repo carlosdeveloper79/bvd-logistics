@@ -32,13 +32,20 @@ const adminCard = document.getElementById("adminCard");
 const adminLoginForm = document.getElementById("adminLoginForm");
 const adminLoginStatus = document.getElementById("adminLoginStatus");
 const adminLoginBtn = document.getElementById("adminLoginBtn");
+const adminLoadingScreen = document.getElementById("adminLoadingScreen");
+
+function hideLoading() {
+  if (adminLoadingScreen) adminLoadingScreen.style.display = "none";
+}
 
 function showGate() {
+  hideLoading();
   loginGate.classList.remove("is-hidden");
   adminCard.classList.add("is-hidden");
 }
 
 function showDashboard() {
+  hideLoading();
   loginGate.classList.add("is-hidden");
   adminCard.classList.remove("is-hidden");
 }

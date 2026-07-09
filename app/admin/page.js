@@ -5,43 +5,37 @@ export const dynamic = "force-dynamic";
 export default function AdminPage() {
   return (
     <>
-      {/* ── LOGIN GATE ─────────────────────────────────────── */}
-      <div id="loginGate" className="ap-login-page">
-        {/* Left brand panel */}
-        <div className="ap-login-brand-panel">
-          <div className="ap-login-brand-inner">
-            <div className="ap-login-brand-logo">
+      {/* ── LOADING SCREEN — shown while auth status is checked ── */}
+      <div id="adminLoadingScreen" className="ap-auth-loading">
+        <div className="ap-auth-loading-inner">
+          <div className="ap-auth-spinner" aria-hidden="true"></div>
+          <p className="ap-auth-loading-text">BVD Logistics</p>
+        </div>
+      </div>
+
+      {/* ── LOGIN GATE — hidden until auth check determines no session ── */}
+      <div id="loginGate" className="ap-login-page is-hidden">
+        <div className="ap-login-card">
+          <div className="ap-login-card-inner">
+            <div className="ap-login-brand-logo" style={{ marginBottom: "2rem" }}>
               <span className="ap-login-brand-mark">BVD</span>
               <span className="ap-login-brand-name">Logistics</span>
             </div>
-            <h2 className="ap-login-brand-headline">Operations Control Center</h2>
-            <p className="ap-login-brand-sub">Manage your delivery network, driver onboarding, team assignments, and route operations from one secure dashboard.</p>
-            <div className="ap-login-brand-dots" aria-hidden="true">
-              <span /><span /><span />
-            </div>
-          </div>
-        </div>
-
-        {/* Right form panel */}
-        <div className="ap-login-form-panel">
-          <div className="ap-login-card">
-            <div className="ap-login-card-inner">
-              <p className="ap-login-eyebrow">Admin Portal</p>
-              <h1 className="ap-login-title">Sign in</h1>
-              <p className="ap-login-sub">Enter your credentials to access the dashboard.</p>
-              <form id="adminLoginForm" className="ap-login-form">
-                <div className="ap-field">
-                  <label htmlFor="adminLoginEmail">Email address</label>
-                  <input id="adminLoginEmail" className="ap-input" type="email" name="email" placeholder="you@example.com" required />
-                </div>
-                <div className="ap-field">
-                  <label htmlFor="adminLoginPassword">Password</label>
-                  <input id="adminLoginPassword" className="ap-input" type="password" name="password" placeholder="••••••••" required />
-                </div>
-                <button id="adminLoginBtn" type="submit" className="ap-btn-primary ap-btn-full" style={{ marginTop: "0.5rem" }}>Sign In</button>
-              </form>
-              <div id="adminLoginStatus" className="ap-login-status notification is-hidden" aria-live="polite"></div>
-            </div>
+            <p className="ap-login-eyebrow">Admin Portal</p>
+            <h1 className="ap-login-title">Sign in</h1>
+            <p className="ap-login-sub">Enter your credentials to access the dashboard.</p>
+            <form id="adminLoginForm" className="ap-login-form">
+              <div className="ap-field">
+                <label htmlFor="adminLoginEmail">Email address</label>
+                <input id="adminLoginEmail" className="ap-input" type="email" name="email" placeholder="you@example.com" required />
+              </div>
+              <div className="ap-field">
+                <label htmlFor="adminLoginPassword">Password</label>
+                <input id="adminLoginPassword" className="ap-input" type="password" name="password" placeholder="••••••••" required />
+              </div>
+              <button id="adminLoginBtn" type="submit" className="ap-btn-primary ap-btn-full" style={{ marginTop: "0.5rem" }}>Sign In</button>
+            </form>
+            <div id="adminLoginStatus" className="ap-login-status notification is-hidden" aria-live="polite"></div>
           </div>
         </div>
       </div>
