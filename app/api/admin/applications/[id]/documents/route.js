@@ -23,7 +23,7 @@ async function getAppPaths(id) {
 }
 
 export async function GET(request, { params }) {
-  const auth = requireAdmin(request);
+  const auth = await requireAdmin(request);
   if (!auth.ok) return auth.response;
   const { id } = await params;
   const field = new URL(request.url).searchParams.get("field");
@@ -43,7 +43,7 @@ export async function GET(request, { params }) {
 }
 
 export async function DELETE(request, { params }) {
-  const auth = requireAdmin(request);
+  const auth = await requireAdmin(request);
   if (!auth.ok) return auth.response;
   const { id } = await params;
   const field = new URL(request.url).searchParams.get("field");
@@ -61,7 +61,7 @@ export async function DELETE(request, { params }) {
 }
 
 export async function POST(request, { params }) {
-  const auth = requireAdmin(request);
+  const auth = await requireAdmin(request);
   if (!auth.ok) return auth.response;
   const { id } = await params;
   const field = new URL(request.url).searchParams.get("field");

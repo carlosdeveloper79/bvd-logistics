@@ -1,4 +1,3 @@
-import { buildAdminToken } from "@/lib/auth";
 import { json } from "@/lib/api";
 import { supabase, supabaseAuth } from "@/lib/supabase";
 
@@ -24,7 +23,7 @@ export async function POST(request) {
       return json({ error: "Invalid credentials." }, 401);
     }
 
-    // 2. Check the email is in the admins allowlist
+    // 2. Confirm email is in the admins allowlist
     const { data: adminRow } = await supabase
       .from("admins")
       .select("email")
@@ -35,8 +34,8 @@ export async function POST(request) {
       return json({ error: "Not authorized as admin." }, 403);
     }
 
-    // 3. Issue app session token
-    return json({ token: buildAdminToken(email) });
+    // 3. Return the Supabase access token — no custom secret needed
+    return json({ token: authData.session.access_token });
   } catch (error) {
     return json({ error: error.message || "Server error." }, 500);
   }

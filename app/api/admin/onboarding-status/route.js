@@ -4,7 +4,7 @@ import { supabase } from "@/lib/supabase";
 export const runtime = "nodejs";
 
 export async function GET(request) {
-  const auth = requireAdmin(request);
+  const auth = await requireAdmin(request);
   if (!auth.ok) {
     return auth.response;
   }
