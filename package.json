@@ -1,0 +1,20 @@
+{
+  "name": "bella-vista-driver-onboarding",
+  "version": "1.0.0",
+  "description": "Bella Vista Dedicated Logistics LLC driver onboarding app",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.53.0",
+    "bulma": "^1.0.1",
+    "dotenv": "^16.6.1",
+    "motion": "^12.42.2",
+    "next": "^16.0.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "uuid": "^11.1.1"
+  }
+}

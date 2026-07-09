@@ -1,0 +1,22 @@
+# Dependencies
+node_modules
+
+# Environment (NEVER commit real secrets)
+.env
+.env.local
+.env.*.local
+
+# Next.js build output
+.next
+out
+
+# Local uploads (sensitive documents)
+data/uploads/*
+!data/uploads/.gitkeep
+
+# OS / editor
+.DS_Store
+*.swp
+.idea
+.vscode
+
