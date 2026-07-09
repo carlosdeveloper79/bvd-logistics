@@ -1,5 +1,6 @@
-# Dependencies
+# Dependencies (keep package-lock.json tracked for reproducible CI builds)
 node_modules
+!package-lock.json
 
 # Environment (NEVER commit real secrets)
 .env
